@@ -1,7 +1,5 @@
 import { createPortal } from "react-dom";
 import { useRef, useEffect } from "react";
-import UserProgressContext from "../../store/UserProgress";
-
 export default function Modal({ children, open , className = '' }) {
     const dialog = useRef();
     useEffect(()=>{
