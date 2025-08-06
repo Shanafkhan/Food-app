@@ -16,11 +16,12 @@ function cartReducer(state, action) {
     const updatedItems = [...state.items];
     // if the item exists update the item quantity 
     if (existingCartItemIndex > -1) {
-      const existingItem = state.item[existingCartItemIndex];
-      const updateItem = {
+      const existingItem = state.items[existingCartItemIndex];
+      const updatedItem = {
         ...existingItem,
         quantity: existingItem.quantity + 1,
       };
+      updatedItems[existingCartItemIndex] = updatedItem;
     } else {
       updatedItems.push({ ...action.item, quantity: 1 }); // else push the item with the quantity
     }
